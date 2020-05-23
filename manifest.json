@@ -1,0 +1,17 @@
+{
+	"format_version": 1,
+	"header": {
+		"description": "The Shader you wanted.\n Made by §b@channel_nari",
+		"name": "Impression Shadow Shader BE v0.01",
+		"uuid": "1ecdbfe1-0c33-4495-9d40-fe91b09a2d6d",
+		"version": [0, 0, 0],
+		"min_engine_version": [1, 8, 0]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "6bbc13dc-1dde-4c5c-85d9-fb277f135f81",
+			"version": [0, 0, 0]
+		}
+	]
+}
