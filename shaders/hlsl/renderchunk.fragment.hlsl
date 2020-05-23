@@ -71,7 +71,7 @@ void main(in PS_Input PSInput, out PS_Output PSOutput)
 #ifndef SEASONS
 	#if !USE_ALPHA_TEST && !defined(BLEND)
 		diffuse.a = PSInput.color.a;
-	#endif	
+	#endif
 
 	diffuse.rgb *= PSInput.color.rgb;
 #else
@@ -91,7 +91,7 @@ diffuse.rgb *= lerp(shadow,1.0,PSInput.uv1.x);
 //torch
 float3 colorA = float3(0.990,0.388,0.0);
 float3 colorB = float3(1.5,0.474,0.0);
-highp float ti = abs(sin(TIME));
+float ti = abs(sin(TIME));
 float3 light = lerp(colorA,colorB,ti);
 diffuse.rgb += light *max(PSInput.uv1.x-0.5,0.0)*(1.0-diffuse.rgb);
 
@@ -104,7 +104,7 @@ diffuse.rgb += light *max(PSInput.uv1.x-0.5,0.0)*(1.0-diffuse.rgb);
 	PSOutput.color = diffuse;
 
 #ifdef VR_MODE
-	// On Rift, the transition from 0 brightness to the lowest 8 bit value is abrupt, so clamp to 
+	// On Rift, the transition from 0 brightness to the lowest 8 bit value is abrupt, so clamp to
 	// the lowest 8 bit value.
 	PSOutput.color = max(PSOutput.color, 1 / 255.0f);
 #endif
