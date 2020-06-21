@@ -89,8 +89,8 @@ float shadow = lerp(0.55,1.0,smoothstep(0.855,0.875, PSInput.uv1.y));
 diffuse.rgb *= lerp(shadow,1.0,PSInput.uv1.x);
 
 //torch
-float3 colorA = float3(0.990,0.388,0.0);
-float3 colorB = float3(1.5,0.474,0.0);
+float3 colorA = float3(1.5,0.5,0.0);
+float3 colorB = float3(0.9,0.1,0.0);
 float ti = abs(sin(TIME));
 float3 light = lerp(colorA,colorB,ti);
 diffuse.rgb += light *max(PSInput.uv1.x-0.5,0.0)*(1.0-diffuse.rgb);
