@@ -2,7 +2,7 @@
 	"biomes": {
 		"default": {
 			"water_surface_color": "#44AFF5",
-			"water_surface_transparency": 0.45,
+			"water_surface_transparency": 0.55,
 			"water_fog_color": "#44AFF5",
 			"water_fog_distance": 100
 		},

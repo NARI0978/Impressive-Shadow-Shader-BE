@@ -2,7 +2,7 @@
 	"format_version": 1,
 	"header": {
 		"description": "§dThanks§f for Download!! \n Made by §b@channel_nari",
-		"name": "Impressive Shadow Shader BE v1.0",
+		"name": "Impressive Shadow Shader BE β v1.5",
 		"uuid": "1ecdbfe1-0c33-4495-9d40-fe91b09a2d6d",
 		"version": [0, 0, 0],
 		"min_engine_version": [1, 8, 0]
@@ -13,5 +13,18 @@
 			"uuid": "6bbc13dc-1dde-4c5c-85d9-fb277f135f81",
 			"version": [0, 0, 0]
 		}
+		],
+		   "subpacks": [
+   	{
+      "folder_name": "NC",
+      "name": "NomalCloud",
+      "memory_tier": 1
+		},
+{
+      "folder_name": "CC",
+      "name": "Realistic Cloud",
+      "memory_tier": 2
+		}
+
 	]
 }
