@@ -50,14 +50,14 @@ void main()
 #ifdef BYPASS_PIXEL_SHADER
 	gl_FragColor = vec4(0, 0, 0, 0);
 	return;
-#else 
+#else
 
 #if USE_TEXEL_AA
 	vec4 diffuse = texture2D_AA(TEXTURE_0, uv0);
 #else
 	vec4 diffuse = texture2D(TEXTURE_0, uv0);
 #endif
-	
+
 #ifdef SEASONS_FAR
 	diffuse.a = 1.0;
 #endif
@@ -71,7 +71,7 @@ void main()
 	if(diffuse.a < ALPHA_THRESHOLD)
 		discard;
 #endif
-	
+
 vec4 inColor = color;
 
 #if defined(BLEND)
@@ -86,7 +86,7 @@ vec4 inColor = color;
 	#if !USE_ALPHA_TEST && !defined(BLEND)
 		diffuse.a = inColor.a;
 	#endif
-	
+
 	diffuse.rgb *= inColor.rgb;
 #else
 	vec2 uv = inColor.xy;
@@ -101,10 +101,10 @@ diffuse.rgb = Film(diffuse.rgb);
 float shadow = mix(0.55,1.0,smoothstep(0.855,0.875,uv1.y));
 diffuse.rgb *= mix(shadow,1.0,uv1.x);
 //torch
-vec3 colorA = vec3(0.990,0.388,0.0);
-vec3 colorB = vec3(1.5,0.474,0.0);
+vec3 colorA = vec3(0.7,0.5,0.3);
+vec3 colorB = vec3(1.0,0.65,0.3);
 highp float ti = abs(sin(TIME));
-vec3 light = mix(colorA,colorB,ti);
+vec3 light = mix(colorA*1.1,colorB*1.2,ti);
 diffuse.rgb += light *max(uv1.x-0.5,0.0)*(1.0-diffuse.rgb);
 
 
@@ -113,6 +113,6 @@ diffuse.rgb += light *max(uv1.x-0.5,0.0)*(1.0-diffuse.rgb);
 #endif
 
 	gl_FragColor = diffuse;
-	
+
 #endif // BYPASS_PIXEL_SHADER
 }
