@@ -23,7 +23,7 @@ uniform vec2 FOG_CONTROL;
 #include "snoise.h"
 
 vec3 CC_DC = vec3(1.3,1.3,1.1);
-vec3 CC_NC = vec3(0.2,0.21,0.25);
+vec3 CC_NC = vec3(0.62,0.62,0.62);
 
 
 highp float fBM(const int octaves, const float lowerBound, const float upperBound, highp vec2 st) {
@@ -44,12 +44,12 @@ void main()
 {
 vec4 n_color = color;
 float weather = smoothstep(.8,1.,FOG_CONTROL.y);//天候時
-n_color = mix(mix(n_color,fogcolor,.33)+vec4(0.0,0.05,0.1,0.0),fogcolor*1.1,smoothstep(.1,.4,fogintense));
+n_color = mix(mix(n_color,fogcolor,.33),fogcolor,smoothstep(.0,.1,fogintense));
 
 	float day = smoothstep(.15,.25,fogcolor.g);//日中
 	vec3 cc = mix(CC_NC,CC_DC,day);//雲の色
-	float lb = mix(.0,.55,weather);//雲の量
-	float cm = fBM(10,lb,1.2,position.xz*3.5 -TIME*.01);//雲の動き
+	float lb = mix(.0,.6,weather);//雲の量
+	float cm = fBM(10,lb,1.2,position.xz*5.5 -TIME*.005);//雲の動き
 	n_color.rgb = mix(n_color.rgb, cc, cm);
 
 gl_FragColor = mix(n_color, fogcolor, fogintense);
