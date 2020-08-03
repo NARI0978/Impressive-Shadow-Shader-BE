@@ -29,6 +29,7 @@ varying vec4 fogColor;
 #include "uniformShaderConstants.h"
 #include "util.h"
 uniform highp float TIME;
+uniform vec2 FOG_CONTROL;
 
 LAYOUT_BINDING(0) uniform sampler2D TEXTURE_0;
 LAYOUT_BINDING(1) uniform sampler2D TEXTURE_1;
