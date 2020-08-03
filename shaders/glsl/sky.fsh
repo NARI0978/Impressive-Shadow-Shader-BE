@@ -44,12 +44,12 @@ void main()
 {
 vec4 n_color = color;
 float weather = smoothstep(.8,1.,FOG_CONTROL.y);//天候時
-n_color = mix(mix(n_color,fogcolor,.33),fogcolor,smoothstep(.0,.1,fogintense));
+n_color = mix(mix(n_color,fogcolor,.33),fogcolor,smoothstep(.0,1.,fogintense));
 
 	float day = smoothstep(.15,.25,fogcolor.g);//日中
 	vec3 cc = mix(CC_NC,CC_DC,day);//雲の色
-	float lb = mix(.0,.6,weather);//雲の量
-	float cm = fBM(10,lb,1.2,position.xz*5.5 -TIME*.005);//雲の動き
+	float lb = mix(.0,.55,weather);//雲の量
+	float cm = fBM(10,lb,1.2,position.xz*4.5 -TIME*.005);//雲の動き
 	n_color.rgb = mix(n_color.rgb, cc, cm);
 
 gl_FragColor = mix(n_color, fogcolor, fogintense);

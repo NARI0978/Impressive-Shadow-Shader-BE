@@ -81,6 +81,12 @@ void main(in PS_Input PSInput, out PS_Output PSOutput)
 	diffuse.a = 1.0f;
 #endif
 
+//setting
+float rain = 1.0 - pow(FOG_CONTROL.y,11.0);
+
+//day&rain
+diffuse.rgb *= lerp(float3(1.0),float3(0.66),rain);  
+
 //tone
 diffuse.rgb = Film(diffuse.rgb);
 

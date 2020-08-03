@@ -15,8 +15,8 @@ struct PS_Input
 {
 	float4 position : SV_Position;
 	float4 color : COLOR;
-	float3 pos : ISBECloud;
-	float sky : ISBESky;
+	float3 pos : POS;
+	float sky : SKY;
 
 	#ifdef GEOMETRY_INSTANCEDSTEREO
 		uint instanceID : SV_InstanceID;

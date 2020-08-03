@@ -5,8 +5,8 @@ struct PS_Input
 {
 	float4 position : SV_Position;
 	float4 color : COLOR;
-	float3 pos : ISBECloud;
-	float sky : ISBESky;
+	float3 pos : POS;
+	float sky : SKY;
 };
 struct PS_Output
 {
@@ -37,7 +37,7 @@ void main( in PS_Input PSInput, out PS_Output PSOutput )
 	float3 CC_NC = float3(0.62,0.62,0.62);
 	float4 n_color = PSInput.color;
 	float weather = smoothstep(0.8,1.0,FOG_CONTROL.y);//天候時
-	n_color = lerp(lerp(n_color,FOG_COLOR,0.33),FOG_COLOR,smoothstep(0.0,0.6,PSInput.sky));
+	n_color = lerp(lerp(n_color,FOG_COLOR,0.33),FOG_COLOR,smoothstep(0.0,1.0,PSInput.sky));
 
 	float day = smoothstep(0.15,0.25,FOG_COLOR.g);//日中
 	float3 cc = lerp(CC_NC,CC_DC,day);//雲の色
