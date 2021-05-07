@@ -1,16 +1,16 @@
 {
 	"format_version": 1,
 	"header": {
-		"description": "§dThanks§f for 2000 Download!! \n Made by §b@channel_nari",
-		"name": "Impressive Shadow Shader BE v1.6.5.1",
-		"uuid": "1ecdbfe1-0c33-4495-9d40-fe91b09a2d6d",
+		"description": "§dThank you§f for using it!! \n Made by §b@channel_nari",
+		"name": "Impressive Shadow Shader BE v1.6.6",
+		"uuid": "24d61099-439b-4107-ba5a-d8dde9a7edc1",
 		"version": [0, 0, 0],
 		"min_engine_version": [1, 8, 0]
 	},
 	"modules": [
 		{
 			"type": "resources",
-			"uuid": "6bbc13dc-1dde-4c5c-85d9-fb277f135f81",
+			"uuid": "baad520f-5604-41bb-b521-8439f7341787",
 			"version": [0, 0, 0]
 		}
 		],
@@ -21,7 +21,7 @@
       "memory_tier": 1
 		},
 {
-      "folder_name": "CC",
+      "folder_name": "RC",
       "name": "Realistic Cloud",
       "memory_tier": 2
 		}

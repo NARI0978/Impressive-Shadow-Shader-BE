@@ -1,0 +1,5 @@
+{
+"skyplane": {
+"fragmentShader": "shaders/sky.fsh"
+  }
+}
